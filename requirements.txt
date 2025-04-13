@@ -1,0 +1,13 @@
+﻿streamlit==1.32.0
+torch==2.2.2
+torchvision==0.17.2
+torchcam
+matplotlib
+Pillow
+numpy
+requests
+seaborn
+python-dotenv
+plotly==6.0.1
+gdown
+scikit-learn
