@@ -46,9 +46,10 @@ with col1:
     st.markdown("### Main Menu")
     page = st.radio(
         "Go to",
-        ["Dataset Information", "Model Training", "Model Comparison", "Model Testing","Model Evaluation", "Project Report", "Project Presentation"],
+        ["Dataset Information", "Model Training", "Model Comparison", "Model Testing","Model Evaluation"],
         label_visibility="collapsed"
     )
+    # , "Project Report", "Project Presentation"
 
 with col2:
     if page == "Dataset Information":
@@ -61,7 +62,7 @@ with col2:
         model_testing.show()
     elif page == "Model Evaluation":
         model_evaluation.show()        
-    elif page == "Project Report":
-        project_pdf.show()
-    elif page == "Project Presentation":
-        presentation_pdf.show()
+    # elif page == "Project Report":
+    #     project_pdf.show()
+    # elif page == "Project Presentation":
+    #     presentation_pdf.show()
