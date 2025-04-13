@@ -101,8 +101,8 @@ def show():
         # plt.xticks(rotation=45, ha='right')
         # plt.yticks(rotation=0)
         # st.pyplot(fig)
-        fig, ax = plt.subplots(figsize=(3, 3))  
-
+        fig, ax = plt.subplots(figsize=(2.5, 2.5))  # ✅ even smaller
+        
         sns.heatmap(
             cm_selected,
             annot=True,
@@ -111,18 +111,21 @@ def show():
             ax=ax,
             xticklabels=df_selected["Class"],
             yticklabels=df_selected["Class"],
-            cbar_kws={'shrink': 0.5}  # smaller color bar
+            cbar_kws={'shrink': 0.4}  # smaller colorbar
         )
         
-        ax.set_xlabel("Predicted", fontsize=8)
-        ax.set_ylabel("Actual", fontsize=8)
+        # Smaller labels
+        ax.set_xlabel("Predicted", fontsize=6)
+        ax.set_ylabel("Actual", fontsize=6)
         
-        plt.xticks(rotation=30, ha='right', fontsize=6)
-        plt.yticks(rotation=0, fontsize=6)
+        plt.xticks(rotation=30, ha='right', fontsize=5)
+        plt.yticks(rotation=0, fontsize=5)
         
-        plt.tight_layout(pad=0.5)  # reduce padding
+        # Reduce space between heatmap and labels
+        plt.tight_layout(pad=0.3)
         
         st.pyplot(fig)
+
 
     else:
         st.info("No confusion matrix found in the evaluation file or no classes selected.")
