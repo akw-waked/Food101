@@ -93,13 +93,35 @@ def show():
 
         cm_selected = cm[np.ix_(selected_indices, selected_indices)]
 
-        fig, ax = plt.subplots(figsize=(3, 3))
-        sns.heatmap(cm_selected, annot=True, fmt="d", cmap="Blues", ax=ax,
-                    xticklabels=df_selected["Class"], yticklabels=df_selected["Class"])
-        ax.set_xlabel("Predicted Label")
-        ax.set_ylabel("True Label")
-        plt.xticks(rotation=45, ha='right')
-        plt.yticks(rotation=0)
+        # fig, ax = plt.subplots(figsize=(3, 3))
+        # sns.heatmap(cm_selected, annot=True, fmt="d", cmap="Blues", ax=ax,
+        #             xticklabels=df_selected["Class"], yticklabels=df_selected["Class"])
+        # ax.set_xlabel("Predicted Label")
+        # ax.set_ylabel("True Label")
+        # plt.xticks(rotation=45, ha='right')
+        # plt.yticks(rotation=0)
+        # st.pyplot(fig)
+        fig, ax = plt.subplots(figsize=(3, 3))  
+
+        sns.heatmap(
+            cm_selected,
+            annot=True,
+            fmt="d",
+            cmap="Blues",
+            ax=ax,
+            xticklabels=df_selected["Class"],
+            yticklabels=df_selected["Class"],
+            cbar_kws={'shrink': 0.5}  # smaller color bar
+        )
+        
+        ax.set_xlabel("Predicted", fontsize=8)
+        ax.set_ylabel("Actual", fontsize=8)
+        
+        plt.xticks(rotation=30, ha='right', fontsize=6)
+        plt.yticks(rotation=0, fontsize=6)
+        
+        plt.tight_layout(pad=0.5)  # reduce padding
+        
         st.pyplot(fig)
 
     else:
