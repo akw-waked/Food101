@@ -158,6 +158,6 @@ def show():
             st.markdown("---")
             recipe_html = st.session_state['recipe_info'].replace(
                 '<img',
-                '<img style="border: 4px solid #ccc; border-radius: 8px; margin-bottom: 16px; width: 100%; height: auto;"'
+                '<img style="border: 4px solid #ccc; border-radius: 8px; margin-bottom: 16px; width: 600px; height: auto;"'
             )
             st.markdown(recipe_html, unsafe_allow_html=True)
