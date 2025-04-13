@@ -93,7 +93,7 @@ def show():
 
         cm_selected = cm[np.ix_(selected_indices, selected_indices)]
 
-        fig, ax = plt.subplots(figsize=(8, 6))
+        fig, ax = plt.subplots(figsize=(5, 4))
         sns.heatmap(cm_selected, annot=True, fmt="d", cmap="Blues", ax=ax,
                     xticklabels=df_selected["Class"], yticklabels=df_selected["Class"])
         ax.set_xlabel("Predicted Label")
